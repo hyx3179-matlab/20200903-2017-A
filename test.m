@@ -32,4 +32,4 @@ bdmbjsxx=bdmbjsxx>0;
 % x0=1;y0=1;
 % Theta = 0.1;
 % 
-% d = 2 * sqrt(a^2 / tan(Theta + atan(y0/x0))^2 + b^2) * cos(Theta + atan(y0/x0));
+% 

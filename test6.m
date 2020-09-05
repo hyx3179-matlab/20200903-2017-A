@@ -15,10 +15,10 @@ load('matlab.data.mat','bdmbjsxx')
 % plot(1:512,asd,'*')
 % figure
 % plot(1:512,safasdf)
-waergq = zeros(1,180);
-srgfnhbedthn = zeros(1,180);
+yuan = zeros(2,180);
+tuo = zeros(2,180);
 tic
-for jj=22
+for jj=1:180
     
     data = [];
     
@@ -26,7 +26,7 @@ for jj=22
         data = [data (bdmbjsxx(ii-1,jj)-bdmbjsxx(ii,jj))];
     end
     
-    data = [0 data];
+%     data = [0 data];
     data2 = [];
     data3 = [];
     for ii=2:511
@@ -38,34 +38,38 @@ for jj=22
         end
     end
     
-%     if length(data2)>2
-%         [~,n] = max(data(data2));
-%         data2(n)=[];
-%         [~,n] = min(data(data3));
-%         data3(n)=[];
-%         if data2(2)<data3(2)
-%             data2 = flip(data2);
-%         end
-%     end
+    if length(data2)>2
+        [~,n] = max(data(data2));
+        data2(n)=[];
+        [~,n] = min(data(data3));
+        data3(n)=[];
+    end
     
-    data3 = data3+1;
-    data2 = data2-1;
+    [~,yuan1] = max(data(data2));
+    [~,yuan2] = min(data(data3));
     
-    srgfnhbedthn(jj) = min(abs(data2-data3));
-    waergq(jj) = max(abs(data2-data3));
+    [~,tuo1] = min(data(data2));
+    [~,tuo2] = max(data(data3));
+    
+    %     data3 = data3+1;
+    %     data2 = data2-1;
+    yuan(:,jj) = [data2(yuan1)-1 data3(yuan2)+1];
+    tuo(:,jj) = [data2(tuo1)-1 data3(tuo2)+1];
 end
 toc
+yuan1 = abs(yuan(1,:)-yuan(2,:));
+tuo1 = abs(tuo(1,:)-tuo(2,:));
 
-we = 2;
+we = 1;
 if we==1
-    plot(1:180,waergq)
+    plot(1:180,tuo1)
     hold on
-    plot(1:180,srgfnhbedthn)
+    plot(1:180,yuan1)
 else
-    plot(1:512,data)
+%     plot(1:512,data)
     %     figure
     hold on
     plot(1:512,bdmbjsxx(:,jj))
-    scatter(data2,bdmbjsxx(data2,jj),'r')
-    scatter(data3,bdmbjsxx(data3,jj),'g')
+    scatter(yuan(:,jj),bdmbjsxx(yuan(:,jj),jj),'r')
+    scatter(tuo(:,jj),bdmbjsxx(tuo(:,jj),jj),'g')
 end
