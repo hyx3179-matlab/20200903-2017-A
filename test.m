@@ -1,7 +1,11 @@
 clear
 load('matlab.data.mat','bdmbjsxx')
 
-% plot(1:512,bdmbjsxx(:,104))
+plot(1:512,bdmbjsxx(:,151))
+[~,sdf]=max(bdmbjsxx(:,151));
+
+
+[~,sdf]=max(bdmbjsxx(:,180));
 % figure
 % imshow(edge(bdmbjsxx,'Prewitt'))
 

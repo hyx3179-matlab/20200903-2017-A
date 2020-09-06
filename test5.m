@@ -1,7 +1,7 @@
 clear
 load('matlab.data.mat','bdmbjsxx')
 
-[yuand,tuod] = get_d(bdmbjsxx);
+[yuan,tuo,yuand,tuod] = get_d(bdmbjsxx);
 
 defd = (80/max(tuod) + 30/min(tuod))/2;
 
@@ -27,7 +27,13 @@ we = 1;
 if we==1
     plot(1:180,tuod)
     hold on
-%     plot(1:180,yuand)
+    plot(1:180,yuand)
+    figure
+    plot(1:180,tuo,'r')
+    hold on
+    plot(1:180,yuan,'g')
+    plot(1:180,sum(tuo)/2)
+    plot(1:180,sum(yuan)/2)
 else
     plot(1:512,data)
     hold on

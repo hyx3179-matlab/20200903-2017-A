@@ -18,7 +18,7 @@ load('matlab.data.mat','bdmbjsxx')
 yuan = zeros(2,180);
 tuo = zeros(2,180);
 tic
-for jj=1:180
+for jj=30
     
     data = [];
     

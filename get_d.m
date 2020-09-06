@@ -1,4 +1,4 @@
-function [yuand,tuod] = get_d(bdmbjsxx)
+function [yuan,tuo,yuand,tuod] = get_d(bdmbjsxx)
 
 yuan = zeros(2,180);
 tuo = zeros(2,180);
