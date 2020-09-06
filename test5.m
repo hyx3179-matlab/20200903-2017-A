@@ -34,6 +34,8 @@ if we==1
     plot(1:180,yuan,'g')
     plot(1:180,sum(tuo)/2)
     plot(1:180,sum(yuan)/2)
+    figure
+    plot(1:180,abs(sum(tuo)/2-sum(yuan)/2)*defd)
 else
     plot(1:512,data)
     hold on
