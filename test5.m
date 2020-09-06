@@ -13,17 +13,15 @@ defd = (80/max(tuod) + 30/min(tuod))/2;
 yuand = yuand*defd;
 tuod = tuod*defd;
 
-Theta = 1:180;
-Theta = Theta*pi/180;
-
-p = polyfit(Theta,tuod,9);
-
-T1 = 40*pi/180;
-T2 = 90*pi/180;
-d1 = polyval(p,T1);
-
-
-d2 = polyval(p,T2);
+% Theta = 1:180;
+% Theta = Theta*pi/180;
+% 
+% p = polyfit(Theta,tuod,9);
+% 
+% T1 = 40*pi/180;
+% T2 = 90*pi/180;
+% d1 = polyval(p,T1);
+% d2 = polyval(p,T2);
 
 we = 1;
 if we==1

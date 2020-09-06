@@ -1,16 +1,17 @@
 clear
-load('matlab.data.mat')
+load('matlab.data.mat','bdmbjsxx')
 
 % plot(1:512,bdmbjsxx(:,104))
 % figure
-imshow(bdmbjsxx)
+% imshow(edge(bdmbjsxx,'Prewitt'))
+
 % bdmbjsxx=[bdmbjsxx,flipud(bdmbjsxx)];
 % bdmbjsxx=[bdmbjsxx,bdmbjsxx];
 % figure
-RAW = uint8(bdmbjsxx./max(max(bdmbjsxx))*256);
-imshow(RAW)
-imwrite(RAW,'myGray.bmp')
-bdmbjsxx=bdmbjsxx>0;
+% RAW = uint8(bdmbjsxx./max(max(bdmbjsxx))*256);
+% imshow(RAW)
+% imwrite(RAW,'myGray.bmp')
+% bdmbjsxx=bdmbjsxx>0;
 
 % BW=bwmorph(bdmbjsxx,'remove');
 % BW=bwmorph(cdata,'remove');
@@ -26,7 +27,7 @@ bdmbjsxx=bdmbjsxx>0;
 % for ii=2:512
 %     if bdmbjsxx(ii,1)>bdmbjsxx(ii-1,1)
 %         
-% plot(1:512,bdmbjsxx(:,1)>0)
+plot(1:512,bdmbjsxx(:,1))
 
 % a=40;b=15;
 % x0=1;y0=1;
